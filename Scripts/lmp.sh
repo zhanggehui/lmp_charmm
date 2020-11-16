@@ -11,7 +11,7 @@
 #SBATCH --exclusive
 
 hosts=`scontrol show hostname $SLURM_JOB_NODELIST`; echo $hosts
-
+echo $1
 source /appsnew/source/intel2018.sh
 #export PATH=/appsnew/physapps/lammps/lammps-7Aug192/bin/bin/:$PATH  # 1,2
 #export PATH=/appsnew/physapps/lammps/lammps-7Aug19/bin/bin/:$PATH  # 1,3
