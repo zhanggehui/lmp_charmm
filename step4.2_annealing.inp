@@ -39,4 +39,4 @@ dump_modify     2 append no
 write_data      ${outputname}.data
 
 reset_timestep  0
-run             10000000
+run             200000
