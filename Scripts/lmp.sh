@@ -6,7 +6,7 @@
 #SBATCH -e 2.err
 #SBATCH --no-requeue
 #SBATCH -A liufeng_g1
-#SBATCH --qos=liufengcnl
+#SBATCH --qos=liufengcns
 #SBATCH --ntasks-per-node=20
 #SBATCH --exclusive
 
