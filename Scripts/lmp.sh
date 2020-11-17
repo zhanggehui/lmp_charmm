@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH -J lmp
 #SBATCH -p cn-short
-#SBATCH -N 1
+#SBATCH -N 4
 #SBATCH -o 1.out
 #SBATCH -e 2.err
 #SBATCH --no-requeue
