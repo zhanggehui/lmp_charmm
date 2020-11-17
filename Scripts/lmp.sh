@@ -18,4 +18,4 @@ source /appsnew/source/intel2018.sh
 #source /appsnew/source/lammps-7Aug19-intel2018mpi-add.sh
 #export PATH=/appsnew/physapps/lammps/lammps-7Aug192/bin2/bin:$PATH
 
-mpirun -np $SLURM_NTASKS lmp -in step4.1_minimization.inp
+mpirun -np $SLURM_NTASKS lmp -in step4.1_equilibration.inp
