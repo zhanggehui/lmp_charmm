@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -J lmp
-#SBATCH -p cn-long
+#SBATCH -p cn-short
 #SBATCH -N 3
 #SBATCH -o 1.out
 #SBATCH -e 2.err
