@@ -30,8 +30,8 @@ neigh_modify    delay 5 every 1
 
 fix             2 all nvt temp 300 300 100.0
 
-shell           sed -e "s/\$bb/1.0/g" -e "s/\$sc/0.1/g" step3_charmm2lammps.col > restraints/${outputname}.col
-fix             restraint all colvars restraints/${outputname}.col output ${outputname}
+#shell           sed -e "s/\$bb/1.0/g" -e "s/\$sc/0.1/g" step3_charmm2lammps.col > restraints/${outputname}.col
+#fix             restraint all colvars restraints/${outputname}.col output ${outputname}
 
 thermo          ${dcdfreq}
 thermo_style    custom step time xlo xhi ylo yhi zlo zhi etotal pe ke temp press ebond eangle edihed eimp evdwl ecoul elong temp vol 
