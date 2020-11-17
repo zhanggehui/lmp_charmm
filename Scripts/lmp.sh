@@ -11,11 +11,11 @@
 #SBATCH --exclusive
 
 hosts=`scontrol show hostname $SLURM_JOB_NODELIST`; echo $hosts
-echo $1
+
 source /appsnew/source/intel2018.sh
 #export PATH=/appsnew/physapps/lammps/lammps-7Aug192/bin/bin/:$PATH  # 1,2
 #export PATH=/appsnew/physapps/lammps/lammps-7Aug19/bin/bin/:$PATH  # 1,3
 #source /appsnew/source/lammps-7Aug19-intel2018mpi-add.sh
 #export PATH=/appsnew/physapps/lammps/lammps-7Aug192/bin2/bin:$PATH
 
-mpirun -np $SLURM_NTASKS lmp -in step4.0_minimization.inp
+mpirun -np $SLURM_NTASKS lmp -in step4.1_minimization.inp
