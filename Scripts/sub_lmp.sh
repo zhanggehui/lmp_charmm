@@ -2,20 +2,20 @@
 #SBATCH -J lmp
 #SBATCH -p cn-short
 #SBATCH -N 4
+#SBATCH --qos=liufengcns
+#SBATCH --ntasks-per-node=20
 #SBATCH -o 1.out
 #SBATCH -e 2.err
 #SBATCH --no-requeue
 #SBATCH -A liufeng_g1
-#SBATCH --qos=liufengcns
-#SBATCH --ntasks-per-node=20
 #SBATCH --exclusive
 
 hosts=`scontrol show hostname $SLURM_JOB_NODELIST`; echo $hosts
+partion=`scontrol show partition`
+echo ${partion}
 
-source /appsnew/source/intel2018.sh
-#export PATH=/appsnew/physapps/lammps/lammps-7Aug192/bin/bin/:$PATH  # 1,2
-#export PATH=/appsnew/physapps/lammps/lammps-7Aug19/bin/bin/:$PATH  # 1,3
-#source /appsnew/source/lammps-7Aug19-intel2018mpi-add.sh
-#export PATH=/appsnew/physapps/lammps/lammps-7Aug192/bin2/bin:$PATH
+currentdir=`pwd` 
+cd /home/liufeng_pkuhpc/lustre2/zgh/zgh_lmp/lmp_install/ ; gitget ; cd $currentdir
+source /home/liufeng_pkuhpc/lustre2/zgh/zgh_lmp/lmp_install/lammps_29Oct2020.sh ${partion}
 
 mpirun -np $SLURM_NTASKS lmp -in step4.2_annealing.inp
