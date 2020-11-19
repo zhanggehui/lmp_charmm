@@ -12,7 +12,7 @@
 
 hosts=`scontrol show hostname $SLURM_JOB_NODELIST`; echo $hosts
 echo aaaa
-echo ${$SLURM_JOB_NODELIST}
+echo $SLURM_JOB_NODELIST
 echo aaaa
 partion=`scontrol show hostname`
 echo ${partion}
