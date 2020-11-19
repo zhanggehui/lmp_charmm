@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH -J lmp
-#SBATCH -p cn-long
-#SBATCH -N 4
-#SBATCH --qos=liufengcnl
+#SBATCH -p cn-short
+#SBATCH -N 1
+#SBATCH --qos=liufengcns
 #SBATCH --ntasks-per-node=20
 #SBATCH -o 1.out
 #SBATCH -e 2.err
@@ -11,7 +11,7 @@
 #SBATCH --exclusive
 
 hosts=`scontrol show hostname $SLURM_JOB_NODELIST`; echo $hosts
-#$SLURM_JOB_PARTITION
+
 source /home/liufeng_pkuhpc/lustre2/zgh/zgh_lmp/lmp_install/lammps_29Oct2020.sh
 
 mpirun -np $SLURM_NTASKS lmp -in step4.2_annealing.inp
