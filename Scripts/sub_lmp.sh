@@ -11,10 +11,10 @@
 #SBATCH --exclusive
 
 hosts=`scontrol show hostname $SLURM_JOB_NODELIST`; echo $hosts
-echo $SLURM_JOB_PARTITION
-partion=`scontrol show partition $SLURM_JOB_PARTITION | grep 'PartitionName' `
+echo ${$SLURM_JOB_NODELIST}
+partion=`scontrol show hostname`
 echo ${partion}
 
-source /home/liufeng_pkuhpc/lustre2/zgh/zgh_lmp/lmp_install/lammps_29Oct2020.sh ${partion}
+source /home/liufeng_pkuhpc/lustre2/zgh/zgh_lmp/lmp_install/lammps_29Oct2020.sh $SLURM_JOB_PARTITION
 
 mpirun -np $SLURM_NTASKS lmp -in step4.2_annealing.inp
